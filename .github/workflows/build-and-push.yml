@@ -56,6 +56,6 @@ jobs:
           build-args: |
             GIT_HASH=${{ steps.get-short.outputs.sha_short }}
           tags: |
-            ghcr.io/bdtfs/compono-backend:${{ steps.new_tag.outputs.new_tag }}
-            ghcr.io/bdtfs/compono-backend:${{ steps.get-short.outputs.sha_short }}
-            ghcr.io/bdtfs/compono-backend:latest
+            ghcr.io/compono-vpn/compono-backend:${{ steps.new_tag.outputs.new_tag }}
+            ghcr.io/compono-vpn/compono-backend:${{ steps.get-short.outputs.sha_short }}
+            ghcr.io/compono-vpn/compono-backend:latest
