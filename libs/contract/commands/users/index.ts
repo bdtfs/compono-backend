@@ -5,6 +5,7 @@ export * from './bulk-all';
 export * from './create-user.command';
 export * from './delete-user.command';
 
+export * from './get-active-vless-uuids.command';
 export * from './get-all-users.command';
 export * from './get-by';
 

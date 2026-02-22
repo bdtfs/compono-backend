@@ -672,6 +672,17 @@ export class UsersService {
         }
     }
 
+    public async getActiveVlessUuids(): Promise<TResult<string[]>> {
+        try {
+            const result = await this.userRepository.getActiveVlessUuids();
+
+            return ok(result);
+        } catch (error) {
+            this.logger.error(error);
+            return fail(ERRORS.GET_ALL_USERS_ERROR);
+        }
+    }
+
     public async getUserAccessibleNodes(
         userUuid: string,
     ): Promise<TResult<GetUserAccessibleNodesResponseModel>> {

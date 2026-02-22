@@ -21,6 +21,7 @@ import {
     DeleteUserCommand,
     DisableUserCommand,
     EnableUserCommand,
+    GetActiveVlessUuidsCommand,
     GetAllTagsCommand,
     GetAllUsersCommand,
     GetUserAccessibleNodesCommand,
@@ -216,6 +217,22 @@ export class UsersController {
             response: new GetAllTagsResponseModel({
                 tags: data,
             }),
+        };
+    }
+
+    @ApiOkResponse({
+        description: 'Active VLESS UUIDs fetched successfully',
+    })
+    @Endpoint({
+        command: GetActiveVlessUuidsCommand,
+        httpCode: HttpStatus.OK,
+    })
+    async getActiveVlessUuids(): Promise<{ response: { uuids: string[] } }> {
+        const result = await this.usersService.getActiveVlessUuids();
+
+        const data = errorHandler(result);
+        return {
+            response: { uuids: data },
         };
     }
 

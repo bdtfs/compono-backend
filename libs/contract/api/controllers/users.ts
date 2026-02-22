@@ -44,4 +44,6 @@ export const USERS_ROUTES = {
     TAGS: {
         GET: 'tags',
     },
+
+    ACTIVE_VLESS_UUIDS: 'active-vless-uuids',
 } as const;

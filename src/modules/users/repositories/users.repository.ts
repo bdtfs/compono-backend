@@ -1018,6 +1018,16 @@ export class UsersRepository {
         return result.map((user) => user.tag).filter((tag) => tag !== null);
     }
 
+    public async getActiveVlessUuids(): Promise<string[]> {
+        const result = await this.qb.kysely
+            .selectFrom('users')
+            .select('vlessUuid')
+            .where('status', '=', 'ACTIVE')
+            .execute();
+
+        return result.map((user) => user.vlessUuid);
+    }
+
     public async countByStatus(status: TUsersStatus): Promise<number> {
         const result = await this.prisma.tx.users.count({ where: { status } });
 
