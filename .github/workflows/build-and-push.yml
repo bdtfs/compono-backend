@@ -68,6 +68,8 @@ jobs:
             ghcr.io/compono-vpn/compono-backend:${{ steps.new_tag.outputs.new_tag }}
             ghcr.io/compono-vpn/compono-backend:${{ steps.get-short.outputs.sha_short }}
             ghcr.io/compono-vpn/compono-backend:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
   dispatch-update:
     name: Dispatch Tag to ArgoCD
