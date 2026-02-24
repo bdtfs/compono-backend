@@ -362,7 +362,7 @@ async function seedSubscriptionSettings() {
         limitedUsers: ['🚧 Subscription limited', 'Contact support'],
         disabledUsers: ['🚫 Subscription disabled', 'Contact support'],
         emptyHosts: [
-            '→ Remnawave',
+            '→ Compono VPN',
             '→ No hosts found',
             '→ Check Hosts tab',
             '→ Check Internal Squads tab',
@@ -424,7 +424,7 @@ async function seedSubscriptionSettings() {
 
     await prisma.subscriptionSettings.create({
         data: {
-            profileTitle: 'Remnawave',
+            profileTitle: 'Compono VPN',
             supportLink: 'https://docs.rw',
             profileUpdateInterval: 12,
             isProfileWebpageUrlEnabled: true,
